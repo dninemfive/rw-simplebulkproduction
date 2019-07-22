@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Cupro's Stones -->
+	<Operation Class="PatchOperationSequence">
+	  <success>Always</success>
+	  <operations>
+		<li Class="PatchOperationTest">
+		  <xpath>*/ThingDef[defName = "Syenite"]</xpath>
+		</li>
+		<li Class="PatchOperationInsert">
+		  <xpath>*/RecipeDef[defName = "Make_StoneBlocksMarbleBulk"]</xpath>
+		  <value>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksClaystoneBulk</defName>
+				<label>make claystone blocks in bulk</label>
+				<description>Cut three claystone chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>ChunkClaystone</li>
+							</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkClaystone</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksClaystone>60</BlocksClaystone>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksAndesiteBulk</defName>
+				<label>make andesite blocks in bulk</label>
+				<description>Cut three andesite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>ChunkAndesite</li>
+							</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkAndesite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksAndesite>60</BlocksAndesite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksSyeniteBulk</defName>
+				<label>make syenite blocks in bulk</label>
+				<description>Cut three syenite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkSyenite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkSyenite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksSyenite>60</BlocksSyenite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksGneissBulk</defName>
+				<label>make gneiss blocks in bulk</label>
+				<description>Cut three gneiss chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkGneiss</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkGneiss</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksGneiss>60</BlocksGneiss>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksQuartziteBulk</defName>
+				<label>make quartzite blocks in bulk</label>
+				<description>Cut three quartzite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkQuartzite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkQuartzite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksQuartzite>60</BlocksQuartzite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksSchistBulk</defName>
+				<label>make schist blocks in bulk</label>
+				<description>Cut three schist chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkSchist</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkSchist</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksSchist>60</BlocksSchist>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksGabbroBulk</defName>
+				<label>make gabbro blocks in bulk</label>
+				<description>Cut three gabbro chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkGabbro</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkGabbro</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksGabbro>60</BlocksGabbro>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksDioriteBulk</defName>
+				<label>make diorite blocks in bulk</label>
+				<description>Cut three diorite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkDiorite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkDiorite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksDiorite>60</BlocksDiorite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksDuniteBulk</defName>
+				<label>make dunite blocks in bulk</label>
+				<description>Cut three dunite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkDunite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkDunite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksDunite>60</BlocksDunite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksPegmatiteBulk</defName>
+				<label>make pegmatite blocks in bulk</label>
+				<description>Cut three pegmatite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkPegmatite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkPegmatite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksPegmatite>60</BlocksPegmatite>
+				</products>
+			</RecipeDef>
+		  </value>
+		</li>
+	  </operations>
+	</Operation>
+	<!-- [K]Extra Stone -->
+	<Operation Class="PatchOperationSequence">
+	  <success>Always</success>
+	  <operations>
+		<li Class="PatchOperationTest">
+		  <xpath>*/ThingDef[defName = "Emperadordark"]</xpath>
+		</li>
+		<li Class="PatchOperationInsert">
+		  <xpath>*/RecipeDef[defName = "Make_StoneBlocksMarbleBulk"]</xpath>
+		  <value>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksAndesiteBulk</defName>
+				<label>make andesite blocks in bulk</label>
+				<description>Cut three andesite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkAndesite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkAndesite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksAndesite>60</BlocksAndesite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksAnorthositeBulk</defName>
+				<label>make anorthosite blocks in bulk</label>
+				<description>Cut three anorthosite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkAnorthosite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkAnorthosite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksAnorthosite>60</BlocksAnorthosite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksBasaltBulk</defName>
+				<label>make basalt blocks in bulk</label>
+				<description>Cut three basalt chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkBasalt</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkBasalt</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksBasalt>60</BlocksBasalt>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksBlueschistBulk</defName>
+				<label>make blueschist blocks in bulk</label>
+				<description>Cut three blueschist chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkBlueschist</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkBlueschist</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksBlueschist>60</BlocksBlueschist>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksChalkBulk</defName>
+				<label>make chalk blocks in bulk</label>
+				<description>Cut three chalk chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkChalk</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkChalk</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksChalk>60</BlocksChalk>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksCharnockiteBulk</defName>
+				<label>make charnockite blocks in bulk</label>
+				<description>Cut three charnockite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkCharnockite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkCharnockite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksCharnockite>60</BlocksCharnockite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksCreoleMarbleBulk</defName>
+				<label>make creole marble blocks in bulk</label>
+				<description>Cut three creole marble chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkCreoleMarble</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkCreoleMarble</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksCreoleMarble>60</BlocksCreoleMarble>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksDaciteBulk</defName>
+				<label>make dacite blocks in bulk</label>
+				<description>Cut three dacite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkDacite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkDacite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksDacite>60</BlocksDacite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksDuniteBulk</defName>
+				<label>make dunite blocks in bulk</label>
+				<description>Cut three dunite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkDunite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkDunite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksDunite>60</BlocksDunite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksEmperadordarkBulk</defName>
+				<label>make emperador dark blocks in bulk</label>
+				<description>Cut three emperador dark chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkEmperadordark</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkEmperadordark</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksEmperadordark>60</BlocksEmperadordark>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksEtowahMarbleBulk</defName>
+				<label>make etowah marble blocks in bulk</label>
+				<description>Cut three etowah marble chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkEtowahMarble</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkEtowahMarble</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksEtowahMarble>60</BlocksEtowahMarble>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksGabbroBulk</defName>
+				<label>make gabbro blocks in bulk</label>
+				<description>Cut three gabbro chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkGabbro</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkGabbro</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksGabbro>60</BlocksGabbro>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksGreenSchistBulk</defName>
+				<label>make greenschist blocks in bulk</label>
+				<description>Cut three greenschist chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkGreenSchist</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkGreenSchist</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksGreenSchist>60</BlocksGreenSchist>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksJaspilliteBulk</defName>
+				<label>make jaspillite blocks in bulk</label>
+				<description>Cut three jaspillite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkJaspillite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkJaspillite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksJaspillite>60</BlocksJaspillite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksLepidoliteBulk</defName>
+				<label>make lepidolite blocks in bulk</label>
+				<description>Cut three lepidolite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkLepidolite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkLepidolite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksLepidolite>60</BlocksLepidolite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksLherzoliteBulk</defName>
+				<label>make lherzolite blocks in bulk</label>
+				<description>Cut three lherzolite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkLherzolite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkLherzolite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksLherzolite>60</BlocksLherzolite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksLigniteBulk</defName>
+				<label>make lignite blocks in bulk</label>
+				<description>Cut three lignite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkLignite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkLignite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksLignite>60</BlocksLignite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksMigmatiteBulk</defName>
+				<label>make migmatite blocks in bulk</label>
+				<description>Cut three migmatite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkMigmatite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkMigmatite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksMigmatite>60</BlocksMigmatite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksMonzoniteBulk</defName>
+				<label>make monzonite blocks in bulk</label>
+				<description>Cut three monzonite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkMonzonite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkMonzonite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksMonzonite>60</BlocksMonzonite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksObsidianBulk</defName>
+				<label>make obsidian blocks in bulk</label>
+				<description>Cut three obsidian chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkObsidian</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkObsidian</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksObsidian>60</BlocksObsidian>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksRhyoliteBulk</defName>
+				<label>make rhyolite blocks in bulk</label>
+				<description>Cut three rhyolite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkRhyolite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkRhyolite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksRhyolite>60</BlocksRhyolite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksScoriaBulk</defName>
+				<label>make scoria blocks in bulk</label>
+				<description>Cut three scoria chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkScoria</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkScoria</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksScoria>60</BlocksScoria>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksSerpentiniteBulk</defName>
+				<label>make serpentinite blocks in bulk</label>
+				<description>Cut three serpentinite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkSerpentinite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkSerpentinite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksSerpentinite>60</BlocksSerpentinite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksSiltstoneBulk</defName>
+				<label>make siltstone blocks in bulk</label>
+				<description>Cut three siltstone chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkSiltstone</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkSiltstone</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksSiltstone>60</BlocksSiltstone>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksSoviteBulk</defName>
+				<label>make sovite blocks in bulk</label>
+				<description>Cut three sovite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkSovite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkSovite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksSovite>60</BlocksSovite>
+				</products>
+			</RecipeDef>
+			<RecipeDef ParentName="MakeStoneBlocksBulkBase">
+				<defName>Make_StoneBlocksThometzekiteBulk</defName>
+				<label>make thometzekite blocks in bulk</label>
+				<description>Cut three thometzekite chunks into usable blocks.</description>
+				<ingredients>
+					<li>
+						<filter>
+								<thingDefs>
+									<li>ChunkThometzekite</li>
+								</thingDefs>
+						</filter>
+						<count>3</count>
+					</li>
+				</ingredients>
+				<fixedIngredientFilter>
+					<thingDefs>
+						<li>ChunkThometzekite</li>
+					</thingDefs>
+				</fixedIngredientFilter>
+				<products>
+					<BlocksThometzekite>60</BlocksThometzekite>
+				</products>
+			</RecipeDef>
+		  </value>
+		</li>
+	  </operations>
+	</Operation>
+</Patch>

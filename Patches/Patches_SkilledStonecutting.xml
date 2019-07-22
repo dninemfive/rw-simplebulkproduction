@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class = "PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<!-- tests whether Skilled Stonecutting is installed -->
+			<li Class="PatchOperationTest">
+			  <xpath>*/RecipeDef[@Name = "MakeStoneBlocksBase"]/workSkill</xpath>
+			</li>
+			<li Class="PatchOperationTest">
+			  <xpath>*/RecipeDef[@Name = "MakeStoneBlocksBase"]/workSkillLearnFactor</xpath>
+			</li>
+			<li Class="PatchOperationAdd">				
+				<xpath>*/RecipeDef[@Name = "MakeStoneBlocksBulkBase"]</xpath>
+				<value>
+						<workSkill>Crafting</workSkill>
+						<workSkillLearnFactor>0.25</workSkillLearnFactor> 
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/RecipeDef[@Name = "MakeStoneBlocksBulkBase"]/workSpeedStat</xpath>
+				<value>
+						<workSpeedStat>StonecuttingSpeed</workSpeedStat>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
