@@ -2,6 +2,8 @@
 <ModMetaData>
 	<name>Simple Bulk Production</name>
 	<author>dninemfive</author>
-	<supportedVersions><li>1.0</li></supportedVersions>
+	<packageId>dninemfive.simplebulkproduction</packageId>
+	<supportedVersions><li>1.0</li><li>1.1</li></supportedVersions>
 	<description>Adds new bulk versions of various recipes.</description>
+	<!-- when updated, put a loadAfter for Skilled Stonecutting and those stone mods -->
 </ModMetaData>
