@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<RecipeDef Name="MakeShellsBulkBase" Abstract="True">
+		<jobString>Making shells in bulk.</jobString>
+		<workAmount>3600</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>		
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+	</RecipeDef>	
+	<RecipeDef ParentName="MakeShellsBulkBase">
+		<defName>Make_HEShellsBulk</defName>
+		<label>make high-explosive shells in bulk</label>
+		<description>Make five high-explosive shells from chemfuel and steel.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <Shell_HighExplosive>5</Shell_HighExplosive>
+		</products>
+	</RecipeDef>	
+	<RecipeDef ParentName="MakeShellsBulkBase">
+		<defName>Make_EMPShellsBulk</defName>
+		<label>make EMP shells in bulk</label>
+		<description>Make five EMP shells from components and steel.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>ComponentIndustrial</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <Shell_EMP>5</Shell_EMP>
+		</products>
+	</RecipeDef>	
+	<RecipeDef ParentName="MakeShellsBulkBase">
+		<defName>Make_IncendShellsBulk</defName>
+		<label>make incendiary shells in bulk</label>
+		<description>Make five incendiary shells from chemfuel and steel.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <Shell_Incendiary>5</Shell_Incendiary>
+		</products>
+	</RecipeDef>	
+	<RecipeDef ParentName="MakeShellsBulkBase">
+		<defName>Make_FirefoamShellsBulk</defName>
+		<label>make firefoam shells in bulk</label>
+		<description>Make five firefoam shells from steel.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>150</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <Shell_Firefoam>5</Shell_Firefoam>
+		</products>
+	</RecipeDef>	
+</Defs>
