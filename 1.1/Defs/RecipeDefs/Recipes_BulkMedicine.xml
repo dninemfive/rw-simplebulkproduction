@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef>
+		<defName>D9SBP_Make_MedicineIndustrialBulk</defName>
+		<label>make medicine in bulk</label>
+		<description>Make five medicine from cloth, herbal medicine, and neutroamine.</description>
+		<jobString>Making medicine in bulk.</jobString>
+		<workSkillLearnFactor>1.11</workSkillLearnFactor>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<effectWorking>Tailor</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<workAmount>3150</workAmount>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>MedicineHerbal</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Neutroamine</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Cloth</li>
+			  </thingDefs>
+			</filter>
+			<count>15</count>
+		  </li>		  
+		</ingredients>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>MedicineHerbal</li>
+			<li>Neutroamine</li>
+			<li>Cloth</li>			
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<products>
+		  <MedicineIndustrial>5</MedicineIndustrial>
+		</products>
+		<skillRequirements>
+			<Intellectual>4</Intellectual>
+			<Crafting>8</Crafting>
+		</skillRequirements>
+		<researchPrerequisite>MedicineProduction</researchPrerequisite>
+		<workSkill>Intellectual</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+	</RecipeDef>
+</Defs>
