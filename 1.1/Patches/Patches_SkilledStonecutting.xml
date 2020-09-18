@@ -3,19 +3,21 @@
 	<Operation Class="PatchOperationFindMod">
 		<mods><li>Skilled Stonecutting</li></mods>
 		<match Class="PatchOperationSequence">
-			<li Class="PatchOperationAdd">				
-				<xpath>/Defs/RecipeDef[@Name="MakeStoneBlocksBulkBase"]</xpath>
-				<value>
-					<workSkill>Crafting</workSkill>
-					<workSkillLearnFactor>0.6</workSkillLearnFactor> <!-- 0.25 from Skilled Stonecutting * (3840/1600) -->
-				</value>
-			</li>
-			<li Class="PatchOperationReplace">
-				<xpath>/Defs/RecipeDef[@Name="MakeStoneBlocksBulkBase"]/workSpeedStat</xpath>
-				<value>
-					<workSpeedStat>StonecuttingSpeed</workSpeedStat>
-				</value>
-			</li>
+			<operations>
+				<li Class="PatchOperationAdd">				
+					<xpath>/Defs/RecipeDef[@Name="MakeStoneBlocksBulkBase"]</xpath>
+					<value>
+						<workSkill>Crafting</workSkill>
+						<workSkillLearnFactor>0.6</workSkillLearnFactor> <!-- 0.25 from Skilled Stonecutting * (3840/1600) -->
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[@Name="MakeStoneBlocksBulkBase"]/workSpeedStat</xpath>
+					<value>
+						<workSpeedStat>StonecuttingSpeed</workSpeedStat>
+					</value>
+				</li>
+			</operations>
 		</match>
 	</Operation>
 </Patch>
