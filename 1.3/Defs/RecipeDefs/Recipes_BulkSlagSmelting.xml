@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<RecipeDef>
-    <defName>ExtractMetalFromSlagBulk</defName>
-    <label>smelt metal from slag in bulk</label>
+    <defName>D9SBP_ExtractMetalFromSlagBulk</defName>
+    <label>smelt metal from slag x3</label>
     <description>Use heat and strong electromagnets to extract useful metal from three slag chunks.</description>
     <jobString>Smelting metal from slag in bulk.</jobString>
-    <workAmount>3840</workAmount>
+    <workAmount>960</workAmount>
     <workSpeedStat>SmeltingSpeed</workSpeedStat>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
@@ -20,15 +20,12 @@
       </li>
     </ingredients>
     <products>
-      <Steel>60</Steel>
+      <Steel>45</Steel>
     </products>
     <fixedIngredientFilter>
       <thingDefs>
         <li>ChunkSlagSteel</li>
       </thingDefs>
     </fixedIngredientFilter>
-	<recipeUsers>
-		<li>ElectricSmelter</li>
-	</recipeUsers>
   </RecipeDef>
 </Defs>
