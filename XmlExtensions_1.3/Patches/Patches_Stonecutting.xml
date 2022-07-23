@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="XmlExtensions.ForEach">
+		<xpath>/Defs/ThingDef[@ParentName="MakeStoneBlocksBase"]</xpath>
+		<storeIn>def</storeIn>
+		<apply>
+			<Operation Class="XmlExtensions.CreateVariable">
+				<storeIn>inputCount</storeIn>
+				<!-- This is potentially brittle, but the alternative would be to check if the
+					 filtered thingdef is a stone chunk, which would be extremely performance-intensive. -->
+				<value>{def}/ingredients/li[1]/count</value>
+				<fromXml>true</fromXml>
+				<defaultValue>1</defaultValue>
+				<value2>3</value2>
+				<fromXml2>false</fromXml>
+				<operation>*</operation>
+			</Operation>
+			<Operation Class="XmlExtensions.CreateVariable">
+				<storeIn>outputCount</storeIn>
+				<!-- see above -->
+				<value>{def}/products/*[1]/text()</value>
+				<fromXml>true</fromXml>
+				<defaultValue>20</defaultValue>
+				<value2>3</value2>
+				<fromXml2>false</fromXml2>
+				<operation>*</operation>
+			<Operation Class="XmlExtensions.PatchOperationSafeCopy">
+				
+	</Operation>
+</Patch>
