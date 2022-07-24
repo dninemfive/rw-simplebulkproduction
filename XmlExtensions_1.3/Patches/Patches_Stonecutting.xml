@@ -62,11 +62,26 @@
 				<operation>*</operation>
 			</Operation>
 			<!-- multiply output count by 3 -->
-			<Operation Class="XmlExtensions.PatchOperationMath">
-				<xpath>{def}/products/*[1]</xpath>
-				<value>3</xpath>
-				<operation>*</operation>
-			</Operation>
+			<Operation Class="XmlExtensions.IfStatement">
+				<!-- Make_StoneBlocksAny uses the (extremely opaque :|) specialProducts tag instead of
+						<products/>, so skip that one -->
+				<condition Class="XmlExtensions.Boolean.Comparison">
+					<value1>{def}/defName</value1>
+					<fromXml1>true</fromXml1>
+					<value2>Make_StoneBlocksAny</value2>
+					<relation>eq</relation>
+				</condition>
+				<caseFalse>
+					<Operation Class="XmlExtensions.PatchOperationMath">
+						<xpath>{def}/products/*[1]</xpath>
+						<value>3</xpath>
+						<operation>*</operation>
+					</Operation>
+				</caseFalse>
+			</Operation>			
 		</apply>
+	</Operation>
+	<Operation Class="XmlExtensions.MergeDocument">
+		<docName>D9SBP_temp_Stonecutting</docName>
 	</Operation>
 </Patch>
