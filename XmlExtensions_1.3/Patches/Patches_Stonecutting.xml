@@ -27,4 +27,33 @@
 			<Operation Class="XmlExtensions.PatchOperationSafeCopy">
 				
 	</Operation>
+	<Operation Class="XmlExtensions.CreateDocument">
+		<docName>D9SBP_temp_Stonecutting</docName>
+		<xpath>/Defs/ThingDef[@ParentName="MakeStoneBlocksBase"]</xpath>
+	<Operation>
+	<Operation Class="XmlExtensions.ForEach">
+		<xpath>/D9SBP_temp_Stonecutting/ThingDef[defName!=Make_StoneBlocksAny]</xpath>
+		<storeIn>def</storeIn>
+		<apply>
+			<Operation Class="PatchOperationReplace">
+				
+			</Operation>
+			<!-- multiply output count by 3 -->
+			<Operation Class="XmlExtensions.CreateVariable">
+				<storeIn>outputCount</storeIn>
+				<value>{def}/products/*[1]</value>
+				<fromXml>true</fromXml>
+				<defaultValue>20</defaultValue>
+				<value2>3</value2>
+				<fromXml>false</fromXml>
+				<operation>*</operation>
+				<apply>
+					<Operation Class="XmlExtensions.PatchOperationReplace">
+						<xpath>{def}/products/*[1]/text()</xpath>
+						<value>{outputCount}</value>
+					</Operation>
+				</apply>
+			</Operation>
+		</apply>
+	</Operation>
 </Patch>
