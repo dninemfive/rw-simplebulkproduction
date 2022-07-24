@@ -35,24 +35,37 @@
 		<xpath>/D9SBP_temp_Stonecutting/ThingDef[defName!=Make_StoneBlocksAny]</xpath>
 		<storeIn>def</storeIn>
 		<apply>
-			<Operation Class="PatchOperationReplace">
-				
+			<!-- prepend "D9SBP_" and append "Bulk" to defName -->
+			<Operation Class="XmlExtensions.PatchOperationMath">
+				<xpath>{def}/defName</xpath>
+				<value>D9SBP_</value>
+				<operation>concat2</operation>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationMath">
+				<xpath>{def}/defName</xpath>
+				<value>Bulk</value>
+				<operation>concat</operation>
+			</Operation>
+			<!-- change the label to reflect being in bulk -->
+			<Operation Class="XmlExtensions.PatchOperationMath">
+				<xpath>{def}/label</xpath>
+				<value> x3</value>
+				<operation>concat</operation>
+			</Operation>
+			<!-- The following two patches are brittle, and will likely cause issues if people make weird
+				 stone block recipes (e.g. adding new ingredients or outputs. The alternative would be *very*
+				 expensive checking so i will simply ignore that. -->
+			<!-- multiply input count by 3 -->
+			<Operation Class="XmlExtensions.PatchOperationMath">
+				<xpath>{def}/ingredients/li[1]/filter/count</xpath>
+				<value>3</xpath>
+				<operation>*</operation>
 			</Operation>
 			<!-- multiply output count by 3 -->
-			<Operation Class="XmlExtensions.CreateVariable">
-				<storeIn>outputCount</storeIn>
-				<value>{def}/products/*[1]</value>
-				<fromXml>true</fromXml>
-				<defaultValue>20</defaultValue>
-				<value2>3</value2>
-				<fromXml>false</fromXml>
+			<Operation Class="XmlExtensions.PatchOperationMath">
+				<xpath>{def}/products/*[1]</xpath>
+				<value>3</xpath>
 				<operation>*</operation>
-				<apply>
-					<Operation Class="XmlExtensions.PatchOperationReplace">
-						<xpath>{def}/products/*[1]/text()</xpath>
-						<value>{outputCount}</value>
-					</Operation>
-				</apply>
 			</Operation>
 		</apply>
 	</Operation>
