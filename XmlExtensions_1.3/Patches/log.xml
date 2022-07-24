@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="XmlExtensions.Log">
+		<text>Loaded the XmlExtensions version of Simple Bulk Production.</text>
+	</Operation>
+</Patch>

@@ -1,54 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<Operation Class="XmlExtensions.ForEach">
-		<xpath>/Defs/ThingDef[@ParentName="MakeStoneBlocksBase"]</xpath>
-		<storeIn>def</storeIn>
-		<apply>
-			<Operation Class="XmlExtensions.CreateVariable">
-				<storeIn>inputCount</storeIn>
-				<!-- This is potentially brittle, but the alternative would be to check if the
-					 filtered thingdef is a stone chunk, which would be extremely performance-intensive. -->
-				<value>{def}/ingredients/li[1]/count</value>
-				<fromXml>true</fromXml>
-				<defaultValue>1</defaultValue>
-				<value2>3</value2>
-				<fromXml2>false</fromXml>
-				<operation>*</operation>
-			</Operation>
-			<Operation Class="XmlExtensions.CreateVariable">
-				<storeIn>outputCount</storeIn>
-				<!-- see above -->
-				<value>{def}/products/*[1]/text()</value>
-				<fromXml>true</fromXml>
-				<defaultValue>20</defaultValue>
-				<value2>3</value2>
-				<fromXml2>false</fromXml2>
-				<operation>*</operation>
-			<Operation Class="XmlExtensions.PatchOperationSafeCopy">
-				
-	</Operation>
 	<Operation Class="XmlExtensions.CreateDocument">
 		<docName>D9SBP_temp_Stonecutting</docName>
-		<xpath>/Defs/ThingDef[@ParentName="MakeStoneBlocksBase"]</xpath>
-	<Operation>
+		<xpath>Defs/RecipeDef[@ParentName="MakeStoneBlocksBase"]</xpath>
+	</Operation>		
 	<Operation Class="XmlExtensions.ForEach">
-		<xpath>/D9SBP_temp_Stonecutting/ThingDef[defName!=Make_StoneBlocksAny]</xpath>
+		<xpath>D9SBP_temp_Stonecutting/RecipeDef</xpath>
+		<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
 		<storeIn>def</storeIn>
 		<apply>
+			<Operation Class="XmlExtensions.Log">
+				<text>Adding bulk recipe for:</text>
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
+				<xpath>{def}/defName</xpath>
+			</Operation>
 			<!-- prepend "D9SBP_" and append "Bulk" to defName -->
 			<Operation Class="XmlExtensions.PatchOperationMath">
 				<xpath>{def}/defName</xpath>
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
 				<value>D9SBP_</value>
 				<operation>concat2</operation>
 			</Operation>
 			<Operation Class="XmlExtensions.PatchOperationMath">
 				<xpath>{def}/defName</xpath>
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
 				<value>Bulk</value>
 				<operation>concat</operation>
+			</Operation>
+			<Operation Class="XmlExtensions.Log">
+				<text>defName is now:</text>
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
+				<xpath>{def}/defName</xpath>
 			</Operation>
 			<!-- change the label to reflect being in bulk -->
 			<Operation Class="XmlExtensions.PatchOperationMath">
 				<xpath>{def}/label</xpath>
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
 				<value> x3</value>
 				<operation>concat</operation>
 			</Operation>
@@ -57,8 +44,9 @@
 				 expensive checking so i will simply ignore that. -->
 			<!-- multiply input count by 3 -->
 			<Operation Class="XmlExtensions.PatchOperationMath">
-				<xpath>{def}/ingredients/li[1]/filter/count</xpath>
-				<value>3</xpath>
+				<xpath>{def}/ingredients/li[1]/count</xpath>
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
+				<value>3</value>
 				<operation>*</operation>
 			</Operation>
 			<!-- multiply output count by 3 -->
@@ -67,14 +55,18 @@
 						<products/>, so skip that one -->
 				<condition Class="XmlExtensions.Boolean.Comparison">
 					<value1>{def}/defName</value1>
+					<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
 					<fromXml1>true</fromXml1>
 					<value2>Make_StoneBlocksAny</value2>
+					<fromXml2>false</fromXml2>
+					<nonNumeric>true</nonNumeric>
 					<relation>eq</relation>
 				</condition>
 				<caseFalse>
 					<Operation Class="XmlExtensions.PatchOperationMath">
 						<xpath>{def}/products/*[1]</xpath>
-						<value>3</xpath>
+						<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
+						<value>3</value>
 						<operation>*</operation>
 					</Operation>
 				</caseFalse>
@@ -83,5 +75,9 @@
 	</Operation>
 	<Operation Class="XmlExtensions.MergeDocument">
 		<docName>D9SBP_temp_Stonecutting</docName>
+	</Operation>
+	<Operation Class="XmlExtensions.Log">
+		<text>After patching, these defs exist:</text>
+		<xpath>Defs/RecipeDef[@ParentName="MakeStoneBlocksBase"]/defName</xpath>
 	</Operation>
 </Patch>
