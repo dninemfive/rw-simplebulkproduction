@@ -4,6 +4,13 @@
 		<docName>D9SBP_temp_Stonecutting</docName>
 		<xpath>Defs/RecipeDef[@ParentName="MakeStoneBlocksBase"]</xpath>
 	</Operation>		
+	<!-- the idea was to copy the original defnames in and insert them later -->
+	<!-- maybe just copy the values in the doc and edit those instead? -->
+	<Operation Class="XmlExtensions.PatchOperationAdd">
+		<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
+		<xpath>D9SBP_temp_Stonecutting</xpath>
+		<value>originalDefNames</value>
+	</Operation>
 	<Operation Class="XmlExtensions.ForEach">
 		<xpath>D9SBP_temp_Stonecutting/RecipeDef</xpath>
 		<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
@@ -13,6 +20,11 @@
 				<text>Adding bulk recipe for:</text>
 				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
 				<xpath>{def}/defName</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAdd">
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
+				<xpath>D9SBP_temp_Stonecutting/originalDefNames</xpath>
+				<value><li>{def}/defName</li></value>
 			</Operation>
 			<!-- prepend "D9SBP_" and append "Bulk" to defName -->
 			<Operation Class="XmlExtensions.PatchOperationMath">
@@ -31,6 +43,11 @@
 				<text>defName is now:</text>
 				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
 				<xpath>{def}/defName</xpath>
+			</Operation>
+			<Operation Class="XmlExtensions.Log">
+				<text>original was {ogDefName}:</text>
+				<xmlDoc>D9SBP_temp_Stonecutting</xmlDoc>
+				<xpath>{ogDefName}</xpath>
 			</Operation>
 			<!-- change the label to reflect being in bulk -->
 			<Operation Class="XmlExtensions.PatchOperationMath">
